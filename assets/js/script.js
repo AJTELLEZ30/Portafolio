@@ -19,7 +19,7 @@ const projects = [
         description: "Aplicación SPA que consume la API oficial de Marvel. Implementa búsqueda dinámica, paginación y renderizado asíncrono de personajes.",
         tech: ["React", "REST API", "Axios", "Hooks"],
         link: "https://github.com/AJTELLEZ30/WebSite-Marvel",
-        demo: null
+        demo: "https://grand-pony-15914b.netlify.app/"
     },
     {
         title: "Coffee Brand Site",
