@@ -1,0 +1,140 @@
+/* Variables de Color Minimalistas */
+:root {
+    --bg-color: #0f172a;       /* Fondo oscuro tipo Azure/Slate */
+    --text-color: #e2e8f0;     /* Blanco suave */
+    --accent-color: #38bdf8;   /* Azul React/Tailwind */
+    --secondary-bg: #1e293b;   /* Fondo secundario */
+    --muted-text: #94a3b8;     /* Texto gris */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo { font-weight: 700; font-size: 1.5rem; color: var(--accent-color); }
+
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a:hover { color: var(--accent-color); }
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.greeting { color: var(--accent-color); font-weight: 500; letter-spacing: 1px; }
+.hero h1 { font-size: 3.5rem; margin: 10px 0; font-weight: 800; }
+.hero .role { color: var(--muted-text); font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem; }
+
+/* Botones */
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+.primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+.secondary {
+    border: 1px solid var(--muted-text);
+    color: var(--text-color);
+}
+.secondary:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+/* Secciones Generales */
+.section { padding: 5rem 2rem; }
+.container { max-width: 900px; margin: 0 auto; }
+.section h3 { font-size: 2rem; margin-bottom: 2rem; position: relative; display: inline-block; }
+.section h3::after {
+    content: ''; display: block; width: 40%; height: 3px; 
+    background: var(--accent-color); margin-top: 5px;
+}
+.alt-bg { background-color: var(--secondary-bg); }
+
+/* Habilidades */
+.skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.skill-tag {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Proyectos (Grid) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+.project-card h4 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.project-card p { color: var(--muted-text); font-size: 0.9rem; margin-bottom: 1.5rem; }
+.card-link { color: var(--accent-color); font-weight: 600; font-size: 0.9rem; }
+
+/* Contacto */
+.contact-container { text-align: center; }
+.contact-links {
+    display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;
+}
+.contact-item { display: flex; align-items: center; gap: 0.5rem; color: var(--muted-text); }
+.contact-item:hover { color: var(--accent-color); }
+
+footer {
+    text-align: center; padding: 2rem; color: var(--muted-text); font-size: 0.8rem;
+    border-top: 1px solid #1e293b;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; } /* Podrías agregar un menú hamburguesa aquí luego */
+    .cta-buttons { flex-direction: column; }
+}
